@@ -30,7 +30,7 @@
 ## 설치 탭(Payload/CoG) 측정 예시
 
 아래 화면의 **빨간 박스 `Measure` 버튼**은 `Payload`(질량)와 `Center of Gravity`(무게중심, CoG)를 추정할 때 사용하는 기능입니다.  
-툴과 작업물의 값을 정확히 모르는 경우, 폴리스코프가 안내하는 **서로 다른 4개 자세**에서 데이터를 수집해 질량과 무게중심을 계산합니다.
+툴과 작업물의 값을 정확히 모르는 경우, 폴리스코프의 페이로드 위자드에서 **서로 다른 4개 웨이포인트를 저장하면** 질량과 무게중심을 계산해줍니다.
 
 ```{figure} ../_static/first-program-payload-cog-measure.png
 :alt: PolyScope Installation 탭의 Payload/CoG Measure 화면
