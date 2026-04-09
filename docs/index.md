@@ -1,7 +1,7 @@
-# UR 협동로봇 입문 웹 매뉴얼
+# 문서 홈
 
-협동로봇을 처음 다루는 작업자와 엔지니어를 위한 입문 문서입니다.  
-아래 4개 카드부터 시작하면 전체 흐름을 빠르게 잡을 수 있습니다.
+UR 협동로봇 입문 문서의 시작 페이지입니다.  
+아래 학습 카드에서 원하는 경로를 선택해 바로 시작할 수 있습니다.
 
 <div class="hero-actions">
   <a class="button-link primary" href="start/cobot-overview.html">문서 시작하기</a>
