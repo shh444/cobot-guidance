@@ -127,14 +127,23 @@ button.btn.search-button-field:hover {
   }
 }
 
-nav.bd-links p.caption,
 p.sidebar-header,
 .sidebar-primary-item .sidebar-header-items__title {
-  font-size: 0.67rem;
+  font-size: 0.69rem;
   font-weight: 700;
-  letter-spacing: 0.07em;
+  letter-spacing: 0.05em;
   text-transform: none;
   color: var(--manual-text-faint);
+}
+
+nav.bd-links p.caption {
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: color-mix(in srgb, var(--manual-text) 76%, rgb(var(--brand-700)) 24%);
+  margin: 0.55rem 0 0.32rem;
+  padding: 0.08rem 0 0.08rem 0.45rem;
+  border-left: 2px solid rgba(var(--brand-500), 0.42);
 }
 
 .bd-links .nav {
@@ -181,7 +190,9 @@ p.sidebar-header,
 }
 
 .bd-docs-nav .sidebar-section[open] > summary {
-  border-color: rgba(var(--brand-500), 0.25);
+  border-color: rgba(var(--brand-500), 0.13);
+  background: color-mix(in srgb, var(--manual-surface-strong) 94%, transparent);
+  color: var(--manual-text-soft);
 }
 
 .bd-docs-nav .sidebar-section > .nav.bd-sidenav {
@@ -195,28 +206,48 @@ p.sidebar-header,
   background: transparent;
 }
 
-.bd-links .nav li > a {
+/* Fallback: even if old detail-based sidebar markup is cached, keep all sections expanded. */
+.bd-docs-nav details.sidebar-section:not([open]) > :not(summary) {
+  display: block !important;
+}
+
+.bd-docs-nav details.sidebar-section > summary {
+  pointer-events: none;
+}
+
+.bd-docs-nav details.sidebar-section > summary::after {
+  content: "";
+}
+
+.bd-links .nav li > a,
+.bd-links .nav li > a:visited {
   border-radius: 8px;
+  border: 1px solid transparent;
   padding: 0.38rem 0.56rem;
   font-size: 0.86rem;
   line-height: 1.38;
   color: var(--manual-text-soft);
   font-weight: 500;
+  box-shadow: none;
   transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease;
 }
 
 .bd-links .nav li > a:hover {
   background: rgba(var(--brand-500), 0.05);
   color: var(--manual-text);
+  border-color: rgba(var(--brand-500), 0.1);
   transform: none;
 }
 
 .bd-links .nav li.current > a,
-.bd-links .nav li.active > a {
-  background: color-mix(in srgb, var(--manual-surface-strong) 88%, rgba(var(--brand-500), 0.12));
-  border: 1px solid rgba(var(--brand-500), 0.2);
+.bd-links .nav li.active > a,
+.bd-links .nav li > a.current,
+.bd-links .nav li > a[aria-current="page"] {
+  background: rgba(var(--brand-500), 0.06);
+  border-color: rgba(var(--brand-500), 0.14);
   color: var(--manual-text);
-  font-weight: 700;
+  font-weight: 500;
+  box-shadow: inset 2px 0 0 rgba(var(--brand-700), 0.55);
 }
 
 .bd-toc nav ul {
@@ -343,6 +374,32 @@ div.highlight pre,
 pre {
   margin: 0;
   padding: 1rem 1.15rem;
+  color: #e8eef8;
+}
+
+html[data-theme="light"] .highlight,
+html[data-theme="light"] div.highlight,
+html[data-theme="light"] pre {
+  background: #f4f7fc;
+  border-color: rgba(148, 163, 184, 0.32);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
+}
+
+html[data-theme="light"] .highlight pre,
+html[data-theme="light"] div.highlight pre,
+html[data-theme="light"] pre {
+  color: #0f172a;
+}
+
+html[data-theme="dark"] .highlight,
+html[data-theme="dark"] div.highlight,
+html[data-theme="dark"] pre {
+  background: #111827;
+}
+
+html[data-theme="dark"] .highlight pre,
+html[data-theme="dark"] div.highlight pre,
+html[data-theme="dark"] pre {
   color: #e8eef8;
 }
 

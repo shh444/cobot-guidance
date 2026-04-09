@@ -9,49 +9,44 @@
 <nav class="bd-docs-nav bd-links" aria-label="전체 문서 목차">
   <p class="bd-links__title" role="heading" aria-level="1">전체 문서 목차</p>
   <div class="bd-toc-item navbar-nav">
-    {% set in_start = pagename.startswith("start/") or pagename == "index" %}
-    <details class="sidebar-section"{% if in_start %} open{% endif %}>
-      <summary class="caption"><span class="caption-text">시작하기</span></summary>
+    <section class="sidebar-section">
+      <p class="caption"><span class="caption-text">시작하기</span></p>
       <ul class="nav bd-sidenav">
         {{ nav_item("start/cobot-overview", "협동로봇 개요") }}
         {{ nav_item("start/version-and-learning-path", "유니버설로봇 구성") }}
         {{ nav_item("start/ursim-first", "유니버설로봇 학습 방법") }}
       </ul>
-    </details>
+    </section>
 
-    {% set in_basics = pagename.startswith("basics/") %}
-    <details class="sidebar-section"{% if in_basics %} open{% endif %}>
-      <summary class="caption"><span class="caption-text">기본 조작</span></summary>
+    <section class="sidebar-section">
+      <p class="caption"><span class="caption-text">기본 조작</span></p>
       <ul class="nav bd-sidenav">
         {{ nav_item("basics/hardware", "하드웨어") }}
         {{ nav_item("basics/polyscope-overview", "PolyScope 개요") }}
         {{ nav_item("basics/first-program", "첫 프로그램 만들기") }}
       </ul>
-    </details>
+    </section>
 
-    {% set in_motion = pagename.startswith("motion/") %}
-    <details class="sidebar-section"{% if in_motion %} open{% endif %}>
-      <summary class="caption"><span class="caption-text">모션과 좌표</span></summary>
+    <section class="sidebar-section">
+      <p class="caption"><span class="caption-text">모션과 좌표</span></p>
       <ul class="nav bd-sidenav">
         {{ nav_item("motion/waypoints-and-moves", "웨이포인트와 이동 명령어") }}
         {{ nav_item("motion/tcp", "TCP") }}
         {{ nav_item("motion/frames-and-features", "좌표계와 Feature") }}
         {{ nav_item("motion/variable-position-moves", "위치변수이동") }}
       </ul>
-    </details>
+    </section>
 
-    {% set in_stability = pagename.startswith("stability/") %}
-    <details class="sidebar-section"{% if in_stability %} open{% endif %}>
-      <summary class="caption"><span class="caption-text">안정 운전</span></summary>
+    <section class="sidebar-section">
+      <p class="caption"><span class="caption-text">안정 운전</span></p>
       <ul class="nav bd-sidenav">
         {{ nav_item("stability/payload-and-cog", "페이로드와 CoG") }}
         {{ nav_item("stability/singularity", "특이점") }}
       </ul>
-    </details>
+    </section>
 
-    {% set in_automation = pagename.startswith("automation/") %}
-    <details class="sidebar-section"{% if in_automation %} open{% endif %}>
-      <summary class="caption"><span class="caption-text">자동화 확장</span></summary>
+    <section class="sidebar-section">
+      <p class="caption"><span class="caption-text">자동화 확장</span></p>
       <ul class="nav bd-sidenav">
         {{ nav_item("automation/urscript-basics", "URScript 기초") }}
         {{ nav_item("automation/communication-overview", "통신 개요") }}
@@ -59,17 +54,16 @@
         {{ nav_item("automation/socket-communication", "URScript Socket 통신") }}
         {{ nav_item("automation/rtde", "RTDE") }}
       </ul>
-    </details>
+    </section>
 
-    {% set in_appendix = pagename.startswith("appendix/") %}
-    <details class="sidebar-section"{% if in_appendix %} open{% endif %}>
-      <summary class="caption"><span class="caption-text">부록</span></summary>
+    <section class="sidebar-section">
+      <p class="caption"><span class="caption-text">부록</span></p>
       <ul class="nav bd-sidenav">
         {{ nav_item("appendix/glossary", "용어집") }}
         {{ nav_item("appendix/ports-and-interfaces", "포트와 인터페이스 요약") }}
         {{ nav_item("appendix/troubleshooting", "트러블슈팅") }}
         {{ nav_item("appendix/official-resources", "공식 자료 링크") }}
       </ul>
-    </details>
+    </section>
   </div>
 </nav>
