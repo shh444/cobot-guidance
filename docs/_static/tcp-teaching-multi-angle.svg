@@ -1,0 +1,88 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">TCP teaching at one fixed point with different robot poses</title>
+  <desc id="desc">All poses share the same TCP position while robot joint angles and tool orientations are different.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8fbff"/>
+      <stop offset="100%" stop-color="#edf3fa"/>
+    </linearGradient>
+    <style>
+      .title { font: 700 26px 'Segoe UI', Arial, sans-serif; fill: #1f2f46; }
+      .sub { font: 500 18px 'Segoe UI', Arial, sans-serif; fill: #4b5f75; }
+      .pose-label { font: 700 22px 'Segoe UI', Arial, sans-serif; fill: #334155; }
+      .arm { stroke: #8ca0b8; stroke-width: 20; stroke-linecap: round; fill: none; opacity: 0.9; }
+      .joint { fill: #d7e2ef; stroke: #6f859f; stroke-width: 3; }
+      .tool { stroke: #5b7088; stroke-width: 12; stroke-linecap: round; }
+      .ori-a { stroke: #ef4444; }
+      .ori-b { stroke: #2563eb; }
+      .ori-c { stroke: #16a34a; }
+      .ori-d { stroke: #a855f7; }
+      .ori { stroke-width: 6; stroke-linecap: round; }
+      .target-ring { fill: none; stroke: #94a3b8; stroke-width: 3; stroke-dasharray: 8 8; }
+      .tcp-core { fill: #ef4444; stroke: #ffffff; stroke-width: 3; }
+      .eq { font: 700 20px 'Segoe UI', Arial, sans-serif; fill: #1e293b; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="1200" height="700" fill="url(#bg)"/>
+
+  <text x="600" y="54" text-anchor="middle" class="title">One Fixed Point, Different Robot Angles</text>
+  <text x="600" y="84" text-anchor="middle" class="sub">TCP position is identical, only pose/orientation changes.</text>
+
+  <!-- Work area -->
+  <rect x="390" y="140" width="420" height="420" rx="24" fill="#ffffff" stroke="#cbd5e1" stroke-width="3"/>
+
+  <!-- Fixed TCP point -->
+  <circle cx="600" cy="350" r="80" class="target-ring"/>
+  <circle cx="600" cy="350" r="8" class="tcp-core"/>
+  <line x1="560" y1="350" x2="640" y2="350" stroke="#ef4444" stroke-width="4"/>
+  <line x1="600" y1="310" x2="600" y2="390" stroke="#ef4444" stroke-width="4"/>
+
+  <!-- overlap rings to emphasize same TCP location -->
+  <circle cx="600" cy="350" r="14" fill="none" stroke="#ef4444" stroke-width="3" opacity="0.9"/>
+  <circle cx="600" cy="350" r="19" fill="none" stroke="#2563eb" stroke-width="3" opacity="0.9"/>
+  <circle cx="600" cy="350" r="24" fill="none" stroke="#16a34a" stroke-width="3" opacity="0.9"/>
+  <circle cx="600" cy="350" r="29" fill="none" stroke="#a855f7" stroke-width="3" opacity="0.9"/>
+
+  <text x="600" y="462" text-anchor="middle" class="eq">TCP_A = TCP_B = TCP_C = TCP_D (same point)</text>
+
+  <!-- Pose A (top-left) -->
+  <path d="M220 160 L360 240 L500 300" class="arm"/>
+  <circle cx="220" cy="160" r="18" class="joint"/>
+  <circle cx="360" cy="240" r="16" class="joint"/>
+  <circle cx="500" cy="300" r="14" class="joint"/>
+  <line x1="500" y1="300" x2="600" y2="350" class="tool"/>
+  <text x="170" y="145" class="pose-label">Pose A</text>
+
+  <!-- Pose B (top-right) -->
+  <path d="M980 160 L840 235 L700 300" class="arm"/>
+  <circle cx="980" cy="160" r="18" class="joint"/>
+  <circle cx="840" cy="235" r="16" class="joint"/>
+  <circle cx="700" cy="300" r="14" class="joint"/>
+  <line x1="700" y1="300" x2="600" y2="350" class="tool"/>
+  <text x="995" y="145" class="pose-label">Pose B</text>
+
+  <!-- Pose C (bottom-left) -->
+  <path d="M210 560 L350 470 L500 400" class="arm"/>
+  <circle cx="210" cy="560" r="18" class="joint"/>
+  <circle cx="350" cy="470" r="16" class="joint"/>
+  <circle cx="500" cy="400" r="14" class="joint"/>
+  <line x1="500" y1="400" x2="600" y2="350" class="tool"/>
+  <text x="150" y="600" class="pose-label">Pose C</text>
+
+  <!-- Pose D (bottom-right) -->
+  <path d="M985 560 L845 470 L700 400" class="arm"/>
+  <circle cx="985" cy="560" r="18" class="joint"/>
+  <circle cx="845" cy="470" r="16" class="joint"/>
+  <circle cx="700" cy="400" r="14" class="joint"/>
+  <line x1="700" y1="400" x2="600" y2="350" class="tool"/>
+  <text x="1000" y="600" class="pose-label">Pose D</text>
+
+  <!-- orientation indication at same TCP -->
+  <line x1="600" y1="350" x2="560" y2="322" class="ori ori-a"/>
+  <line x1="600" y1="350" x2="640" y2="322" class="ori ori-b"/>
+  <line x1="600" y1="350" x2="560" y2="378" class="ori ori-c"/>
+  <line x1="600" y1="350" x2="640" y2="378" class="ori ori-d"/>
+
+  <text x="600" y="518" text-anchor="middle" class="sub">Different wrist/arm angles, same TCP contact point.</text>
+</svg>

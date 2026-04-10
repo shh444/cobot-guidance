@@ -1,0 +1,95 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">TCP reference style with only Z length</title>
+  <desc id="desc">Robot side perspective with TCP axis triad and only Z offset dimension shown.</desc>
+  <defs>
+    <linearGradient id="armSteel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#d9dde2"/>
+      <stop offset="100%" stop-color="#aeb6bf"/>
+    </linearGradient>
+    <linearGradient id="jointDark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#565d67"/>
+      <stop offset="100%" stop-color="#2d3238"/>
+    </linearGradient>
+    <marker id="arrR" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#ef4444"/>
+    </marker>
+    <marker id="arrG" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#10b981"/>
+    </marker>
+    <marker id="arrB" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrDim" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#334155"/>
+    </marker>
+    <style>
+      .bg { fill: #e8e8e8; }
+      .steel { stroke: #7f8791; stroke-width: 4; fill: url(#armSteel); }
+      .joint { fill: url(#jointDark); stroke: #1f2328; stroke-width: 3; }
+      .accent { fill: #77c5f1; stroke: #4698c7; stroke-width: 2; }
+      .rod { stroke: #bcc4cc; stroke-width: 16; stroke-linecap: round; }
+      .toolRod { stroke: #c7ced6; stroke-width: 10; stroke-linecap: round; }
+      .axisX { stroke: #ef4444; stroke-width: 5; marker-end: url(#arrR); }
+      .axisY { stroke: #10b981; stroke-width: 5; marker-end: url(#arrG); }
+      .axisZ { stroke: #2563eb; stroke-width: 5; marker-end: url(#arrB); }
+      .dim { stroke: #334155; stroke-width: 3.2; marker-start: url(#arrDim); marker-end: url(#arrDim); }
+      .guide { stroke: #64748b; stroke-width: 2; stroke-dasharray: 7 6; }
+      .txt { font: 700 30px 'Segoe UI', Arial, sans-serif; }
+      .lbl { font: 700 20px 'Segoe UI', Arial, sans-serif; }
+      .small { font: 600 16px 'Segoe UI', Arial, sans-serif; fill: #334155; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="1200" height="720" class="bg"/>
+
+  <!-- Base and stand -->
+  <ellipse cx="190" cy="626" rx="70" ry="22" fill="#c3c8cf"/>
+  <rect x="148" y="540" width="84" height="96" rx="22" class="joint"/>
+  <ellipse cx="190" cy="540" rx="36" ry="14" class="accent"/>
+  <rect x="232" y="256" width="62" height="286" rx="18" class="steel"/>
+
+  <!-- Shoulder joint -->
+  <circle cx="292" cy="402" r="44" class="joint"/>
+  <circle cx="292" cy="402" r="20" class="accent"/>
+
+  <!-- Upper arm -->
+  <line x1="320" y1="374" x2="448" y2="214" class="rod"/>
+
+  <!-- Elbow joint -->
+  <circle cx="462" cy="198" r="42" class="joint"/>
+  <ellipse cx="462" cy="198" rx="24" ry="10" class="accent"/>
+
+  <!-- Forearm -->
+  <line x1="492" y1="214" x2="650" y2="292" class="rod"/>
+
+  <!-- Wrist joint and tool mount -->
+  <circle cx="666" cy="300" r="34" class="joint"/>
+  <circle cx="666" cy="300" r="14" class="accent"/>
+  <rect x="686" y="280" width="46" height="40" rx="10" class="steel"/>
+
+  <!-- Tool and tip -->
+  <circle cx="744" cy="300" r="24" class="steel"/>
+  <line x1="766" y1="300" x2="878" y2="326" class="toolRod"/>
+  <circle cx="878" cy="326" r="6" fill="#111827"/>
+
+  <!-- TCP point -->
+  <circle cx="900" cy="340" r="6" fill="#ef4444"/>
+
+  <!-- Axis triad at TCP (similar style) -->
+  <line x1="900" y1="340" x2="832" y2="386" class="axisX"/>
+  <line x1="900" y1="340" x2="910" y2="440" class="axisY"/>
+  <line x1="900" y1="340" x2="1036" y2="386" class="axisZ"/>
+  <text x="804" y="408" class="txt" fill="#ef4444">X</text>
+  <text x="920" y="450" class="txt" fill="#10b981">Y</text>
+  <text x="1048" y="398" class="txt" fill="#2563eb">Z</text>
+
+  <!-- Only Z length dimension -->
+  <line x1="744" y1="300" x2="744" y2="370" class="guide"/>
+  <line x1="900" y1="340" x2="900" y2="420" class="guide"/>
+  <line x1="744" y1="418" x2="900" y2="418" class="dim"/>
+  <text x="822" y="404" text-anchor="middle" class="lbl" fill="#334155">Z offset = 180 mm</text>
+
+  <!-- Extra label -->
+  <text x="732" y="268" class="small">Tool flange origin</text>
+  <text x="915" y="328" class="small">TCP</text>
+</svg>
